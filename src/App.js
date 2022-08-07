@@ -31,7 +31,7 @@ function App() {
 
   const obtenerAllArchivos=async()=>{
 
-    await axios.get("https://2v7k0at4a1.execute-api.us-east-2.amazonaws.com/dev/getAll")
+    await axios.get("http://localhost:4000/getAll")
     .then(response=>{
       console.log(response.data.values);      
     }).catch(error=>{
