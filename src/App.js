@@ -31,7 +31,7 @@ function App() {
 
   const obtenerAllArchivos=async()=>{
 
-    await axios.get("http://localhost:4000/getAll")
+    await axios.get("https://2v7k0at4a1.execute-api.us-east-2.amazonaws.com/dev/getAll")
     .then(response=>{
       console.log(response.data.values);      
     }).catch(error=>{
@@ -42,7 +42,18 @@ function App() {
 
   const obtenerArchivo=async()=>{
 
-    await axios.get("http://localhost:4000/get/uploads/ce688cb4-6e7c-45fc-a55a-6a1ed83a417e-CatalogoPartesXG750_2015.pdf")
+    await axios.get("http://localhost:4000/get/9f197834-f3b1-43a7-be0e-088d34370902-CatalogoPartesXG750_2015.pdf")
+    .then(response=>{
+      console.log(response.data);
+    }).catch(error=>{
+      console.log(error);
+    })
+
+  }
+
+  const borrarArchivo=async()=>{
+
+    await axios.delete("http://localhost:4000/delete/7371dc65-9b90-4ee5-8557-f1ee05d5b081-CatalogoPartesXG750_2015.pdf")
     .then(response=>{
       console.log(response.data);
     }).catch(error=>{
@@ -61,6 +72,8 @@ function App() {
       <button className='btn btn-success' onClick={()=>obtenerAllArchivos()}>Obtener all Archivos</button>
       <br/><br/>
       <button className='btn btn-success' onClick={()=>obtenerArchivo()}>Obtener Archivo</button>
+      <br/><br/>
+      <button className='btn btn-danger' onClick={()=>borrarArchivo()}>Borrar Archivo</button>
     </div>
   );
 }
