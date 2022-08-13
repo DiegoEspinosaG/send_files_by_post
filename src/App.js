@@ -42,7 +42,7 @@ function App() {
 
   const obtenerArchivo=async()=>{
 
-    await axios.get("http://localhost:4000/get/9f197834-f3b1-43a7-be0e-088d34370902-CatalogoPartesXG750_2015.pdf")
+    await axios.get("http://localhost:4000/get/aa58e659-25a5-4a28-8b0b-5f1d37c9a37c-fondo.jpg")
     .then(response=>{
       console.log(response.data);
     }).catch(error=>{
@@ -53,7 +53,7 @@ function App() {
 
   const borrarArchivo=async()=>{
 
-    await axios.delete("http://localhost:4000/delete/7371dc65-9b90-4ee5-8557-f1ee05d5b081-CatalogoPartesXG750_2015.pdf")
+    await axios.delete("http://localhost:4000/delete/aa58e659-25a5-4a28-8b0b-5f1d37c9a37c-fondo.jpg")
     .then(response=>{
       console.log(response.data);
     }).catch(error=>{
